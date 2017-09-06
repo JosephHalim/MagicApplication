@@ -31,13 +31,17 @@
     <AppXManifest Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\MagicApp\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-31T05:01:36.244</Modified>
+      <Modified>2017-08-25T04:32:59.143</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\MagicApp\bin\x64\Debug\App1.exe">
       <PackagePath>entrypoint\App1.exe</PackagePath>
-      <Modified>2017-05-31T05:01:32.586</Modified>
+      <Modified>2017-08-25T04:32:58.096</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Joseph\.nuget\packages\HtmlAgilityPack\1.4.9.5\lib\NetCore45\HtmlAgilityPack.dll">
+      <PackagePath>HtmlAgilityPack.dll</PackagePath>
+      <Modified>2016-07-14T18:01:16.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Joseph\.nuget\packages\Microsoft.CSharp\4.3.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -568,11 +572,11 @@
     <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\MagicApp\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-31T05:01:35.982</Modified>
+      <Modified>2017-08-25T04:32:58.665</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\MagicApp\bin\x64\Debug\Core\App1.exe">
       <PackagePath>App1.exe</PackagePath>
-      <Modified>2017-05-31T05:01:36.238</Modified>
+      <Modified>2017-08-25T04:32:59.140</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

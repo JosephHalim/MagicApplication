@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="App1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock x:ConnectionId='1' x:Name="txb_Name" HorizontalAlignment="Left" Margin="213,172,0,0" TextWrapping="Wrap" Text="Card Name" VerticalAlignment="Top"                                             Width="1000"/>
+        <Button x:ConnectionId='2' x:Name="Search" Content="Search for Info" HorizontalAlignment="Left" Margin="283,117,0,0" VerticalAlignment="Top"                     />
+        <TextBlock x:ConnectionId='3' x:Name="txb_manaCost" HorizontalAlignment="Left" Margin="213,201,0,0" TextWrapping="Wrap" Text="Mana Cost" VerticalAlignment="Top" Height="25" Width="1000"                                            />
+        <TextBlock x:ConnectionId='4' x:Name="txb_cmc" HorizontalAlignment="Left" Margin="213,231,0,0" TextWrapping="Wrap" Text="CMC" VerticalAlignment="Top" Height="25" Width="1000"                                            />
+        <TextBlock x:ConnectionId='5' x:Name="txb_colors" HorizontalAlignment="Left" Margin="213,254,0,0" TextWrapping="Wrap" Text="Colors" VerticalAlignment="Top" Height="27" Width="1000"                                            />
+        <TextBlock x:ConnectionId='6' x:Name="txb_type" HorizontalAlignment="Left" Margin="213,286,0,0" TextWrapping="Wrap" Text="Type" VerticalAlignment="Top" Height="25" Width="1000"                                            />
+        <TextBlock x:ConnectionId='7' x:Name="txb_subtype" HorizontalAlignment="Left" Margin="213,316,0,0" TextWrapping="Wrap" Text="SubTypes" VerticalAlignment="Top" Height="25" Width="1000"                                             RenderTransformOrigin="0.482,2.4"/>
+        <TextBlock x:ConnectionId='8' x:Name="txb_text" HorizontalAlignment="Left" Margin="213,346,0,0" TextWrapping="Wrap" Text="Text" VerticalAlignment="Top" Height="25" Width="1000"                                             RenderTransformOrigin="0.482,2.4"/>
+        <TextBlock x:ConnectionId='9' x:Name="txb_power" HorizontalAlignment="Left" Margin="213,376,0,0" TextWrapping="Wrap" Text="Power" VerticalAlignment="Top" Height="25" Width="1000"                                             RenderTransformOrigin="0.482,2.4"/>
+        <TextBlock x:ConnectionId='10' x:Name="txb_toughness" HorizontalAlignment="Left" Margin="213,406,0,0" TextWrapping="Wrap" Text="Toughness" VerticalAlignment="Top" Height="25" Width="1000"                                             RenderTransformOrigin="0.482,2.4"/>
+        <TextBlock x:ConnectionId='11' x:Name="txb_printings" HorizontalAlignment="Left" Margin="213,436,0,0" TextWrapping="Wrap" Text="Printings" VerticalAlignment="Top" Height="25" Width="1000"                                             RenderTransformOrigin="0.482,2.4"/>
+        <TextBlock x:ConnectionId='12' x:Name="txb_legality" HorizontalAlignment="Left" Margin="213,466,0,0" TextWrapping="Wrap" Text="Legal in" VerticalAlignment="Top"                                             RenderTransformOrigin="0.482,2.4" Width="1000"/>
+        <TextBox x:ConnectionId='13' x:Name="txb_card_search" HorizontalAlignment="Left" Margin="31,117,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="198"/>
+        <TextBlock x:ConnectionId='14' x:Name="txb_Name_Copy" HorizontalAlignment="Left" Margin="112,172,0,0" TextWrapping="Wrap" Text="Card Name:" VerticalAlignment="Top"                                             Width="96"/>
+        <TextBlock x:ConnectionId='15' x:Name="txb_manaCost_Copy" HorizontalAlignment="Left" Margin="112,197,0,0" TextWrapping="Wrap" Text="Mana Cost:" VerticalAlignment="Top" Height="25" Width="100"                                            />
+        <TextBlock x:ConnectionId='16' x:Name="txb_cmc_Copy" HorizontalAlignment="Left" Margin="112,229,0,0" TextWrapping="Wrap" Text="CMC:" VerticalAlignment="Top" Height="25" Width="100"                                            />
+        <TextBlock x:ConnectionId='17' x:Name="txb_colors_Copy" HorizontalAlignment="Left" Margin="112,254,0,0" TextWrapping="Wrap" Text="Colors:" VerticalAlignment="Top" Height="27" Width="100"                                            />
+        <TextBlock x:ConnectionId='18' x:Name="txb_type_Copy" HorizontalAlignment="Left" Margin="112,286,0,0" TextWrapping="Wrap" Text="Type:" VerticalAlignment="Top" Height="25" Width="100"                                            />
+        <TextBlock x:ConnectionId='19' x:Name="txb_subtype_Copy" HorizontalAlignment="Left" Margin="112,316,0,0" TextWrapping="Wrap" Text="SubTypes:" VerticalAlignment="Top" Height="25" Width="1000"                                             RenderTransformOrigin="0.482,2.4"/>
+        <TextBlock x:ConnectionId='20' x:Name="txb_text_Copy" HorizontalAlignment="Left" Margin="112,346,0,0" TextWrapping="Wrap" Text="Text:" VerticalAlignment="Top" Height="25" Width="100"                                             RenderTransformOrigin="0.482,2.4"/>
+        <TextBlock x:ConnectionId='21' x:Name="txb_power_Copy" HorizontalAlignment="Left" Margin="112,376,0,0" TextWrapping="Wrap" Text="Power:" VerticalAlignment="Top" Height="25" Width="100"                                             RenderTransformOrigin="0.482,2.4"/>
+        <TextBlock x:ConnectionId='22' x:Name="txb_toughness_Copy" HorizontalAlignment="Left" Margin="112,406,0,0" TextWrapping="Wrap" Text="Toughness:" VerticalAlignment="Top" Height="25" Width="100"                                             RenderTransformOrigin="0.482,2.4"/>
+        <TextBlock x:ConnectionId='23' x:Name="txb_printings_Copy" HorizontalAlignment="Left" Margin="112,436,0,0" TextWrapping="Wrap" Text="Printings:" VerticalAlignment="Top" Height="25" Width="100"                                             RenderTransformOrigin="0.482,2.4"/>
+        <TextBlock x:ConnectionId='24' x:Name="txb_legality_Copy" HorizontalAlignment="Left" Margin="112,466,0,0" TextWrapping="Wrap" Text="Legal in:" VerticalAlignment="Top"                                             RenderTransformOrigin="0.482,2.4" Width="100"/>
+        <TextBlock x:ConnectionId='25' x:Name="Test_Var" HorizontalAlignment="Left" Margin="588,117,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+
+    </Grid>
+</Page>
+

@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>23c0075b-52f6-48f9-9a66-a8d23398fae5</PackageIdentityName>
     <PackageIdentityPublisher>CN=Joseph</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\App1\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\MagicApp\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -18,7 +18,7 @@
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\App1\bin\x86\Debug\AppX</LayoutDir>
+    <LayoutDir>C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\MagicApp\bin\x86\Debug\AppX</LayoutDir>
     <RegisteredManifestChecksum>D4D205BF13C727FA915C5C204AB7887DE2EAE46469B7BAC62FC08A93EACC3E37</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>23c0075b-52f6-48f9-9a66-a8d23398fae5_1.0.0.0_x86__yf0zkrn6341z6</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>23c0075b-52f6-48f9-9a66-a8d23398fae5_yf0zkrn6341z6!App</RegisteredUserModeAppID>
@@ -28,16 +28,20 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\App1\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\MagicApp\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-31T04:41:36.475</Modified>
+      <Modified>2017-09-11T02:19:16.597</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\App1\bin\x86\Debug\App1.exe">
+    <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\MagicApp\bin\x86\Debug\App1.exe">
       <PackagePath>entrypoint\App1.exe</PackagePath>
-      <Modified>2017-05-31T04:41:35.749</Modified>
+      <Modified>2017-09-11T02:19:16.139</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Joseph\.nuget\packages\HtmlAgilityPack\1.4.9.5\lib\NetCore45\HtmlAgilityPack.dll">
+      <PackagePath>HtmlAgilityPack.dll</PackagePath>
+      <Modified>2016-07-14T18:01:16.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Joseph\.nuget\packages\Microsoft.CSharp\4.3.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -519,60 +523,68 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2016-06-12T06:15:04.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\App1\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\MagicApp\AllCards-x.json">
+      <PackagePath>AllCards-x.json</PackagePath>
+      <Modified>2017-09-09T06:08:10.528</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\MagicApp\AllSets.json">
+      <PackagePath>AllSets.json</PackagePath>
+      <Modified>2017-06-03T23:09:17.500</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\MagicApp\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2017-05-27T16:11:30.934</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\App1\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\MagicApp\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
       <Modified>2017-04-30T15:23:41.185</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\App1\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\MagicApp\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-04-30T15:23:41.185</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\App1\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\MagicApp\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-04-30T15:23:41.185</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\App1\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\MagicApp\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-04-30T15:23:41.185</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\App1\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\MagicApp\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-04-30T15:23:41.185</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\App1\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\MagicApp\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-04-30T15:23:41.185</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\App1\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\MagicApp\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-04-30T15:23:41.185</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\App1\bin\x86\Debug\App1.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\MagicApp\bin\x86\Debug\App1.xr.xml">
       <PackagePath>App1.xr.xml</PackagePath>
-      <Modified>2017-05-30T03:55:09.121</Modified>
+      <Modified>2017-09-10T15:04:05.921</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.15063.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2017-04-30T15:59:17.154</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\App1\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\MagicApp\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-05-31T04:41:36.202</Modified>
+      <Modified>2017-09-10T18:35:34.113</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\App1\bin\x86\Debug\Core\App1.exe">
+    <AppxPackagedFile Include="C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\MagicApp\bin\x86\Debug\Core\App1.exe">
       <PackagePath>App1.exe</PackagePath>
-      <Modified>2017-05-31T04:41:36.472</Modified>
+      <Modified>2017-09-11T02:19:16.594</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

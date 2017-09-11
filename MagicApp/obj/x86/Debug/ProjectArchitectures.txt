@@ -1,1 +1,1 @@
-C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\App1\MagicApp.csproj;x86
+C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\MagicApp\MagicApp.csproj;x86

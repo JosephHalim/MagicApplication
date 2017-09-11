@@ -225,3 +225,4 @@ C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\MagicApp\
 C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\MagicApp\bin\x64\Debug\HtmlAgilityPack.pdb
 C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\MagicApp\obj\x64\Debug\HtmlAgilityPack.pri.xml
 C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\MagicApp\bin\x64\Debug\AllSets.json
+C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\MagicApp\bin\x64\Debug\AllCards-x.json

@@ -13,7 +13,7 @@ namespace App1
 {
     public partial class App : global::Windows.UI.Xaml.Markup.IXamlMetadataProvider
     {
-    private global::App1.App1_XamlTypeInfo.XamlTypeInfoProvider _provider;
+    private global::App1.MagicApp_XamlTypeInfo.XamlTypeInfoProvider _provider;
 
         /// <summary>
         /// GetXamlType(Type)
@@ -22,7 +22,7 @@ namespace App1
         {
             if(_provider == null)
             {
-                _provider = new global::App1.App1_XamlTypeInfo.XamlTypeInfoProvider();
+                _provider = new global::App1.MagicApp_XamlTypeInfo.XamlTypeInfoProvider();
             }
             return _provider.GetXamlTypeByType(type);
         }
@@ -34,7 +34,7 @@ namespace App1
         {
             if(_provider == null)
             {
-                _provider = new global::App1.App1_XamlTypeInfo.XamlTypeInfoProvider();
+                _provider = new global::App1.MagicApp_XamlTypeInfo.XamlTypeInfoProvider();
             }
             return _provider.GetXamlTypeByName(fullName);
         }
@@ -49,7 +49,7 @@ namespace App1
     }
 }
 
-namespace App1.App1_XamlTypeInfo
+namespace App1.MagicApp_XamlTypeInfo
 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 14.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -132,15 +132,17 @@ namespace App1.App1_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[3];
+            _typeNameTable = new string[4];
             _typeNameTable[0] = "App1.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[3] = "Object";
 
-            _typeTable = new global::System.Type[3];
+            _typeTable = new global::System.Type[4];
             _typeTable[0] = typeof(global::App1.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[3] = typeof(global::System.Object);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -179,8 +181,8 @@ namespace App1.App1_XamlTypeInfo
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
-            global::App1.App1_XamlTypeInfo.XamlSystemBaseType xamlType = null;
-            global::App1.App1_XamlTypeInfo.XamlUserType userType;
+            global::App1.MagicApp_XamlTypeInfo.XamlSystemBaseType xamlType = null;
+            global::App1.MagicApp_XamlTypeInfo.XamlUserType userType;
             string typeName = _typeNameTable[typeIndex];
             global::System.Type type = _typeTable[typeIndex];
 
@@ -188,29 +190,49 @@ namespace App1.App1_XamlTypeInfo
             {
 
             case 0:   //  App1.MainPage
-                userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType = new global::App1.MagicApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_0_MainPage;
+                userType.AddMemberName("Server");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
             case 1:   //  Windows.UI.Xaml.Controls.Page
-                xamlType = new global::App1.App1_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::App1.MagicApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 2:   //  Windows.UI.Xaml.Controls.UserControl
-                xamlType = new global::App1.App1_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::App1.MagicApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 3:   //  Object
+                xamlType = new global::App1.MagicApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
             return xamlType;
         }
 
 
+        private object get_0_MainPage_Server(object instance)
+        {
+            var that = (global::App1.MainPage)instance;
+            return that.Server;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
-            global::App1.App1_XamlTypeInfo.XamlMember xamlMember = null;
-            // No Local Properties
+            global::App1.MagicApp_XamlTypeInfo.XamlMember xamlMember = null;
+            global::App1.MagicApp_XamlTypeInfo.XamlUserType userType;
+
+            switch (longMemberName)
+            {
+            case "App1.MainPage.Server":
+                userType = (global::App1.MagicApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("App1.MainPage");
+                xamlMember = new global::App1.MagicApp_XamlTypeInfo.XamlMember(this, "Server", "Object");
+                xamlMember.Getter = get_0_MainPage_Server;
+                xamlMember.SetIsReadOnly();
+                break;
+            }
             return xamlMember;
         }
     }
@@ -264,9 +286,9 @@ namespace App1.App1_XamlTypeInfo
 
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 14.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    internal class XamlUserType : global::App1.App1_XamlTypeInfo.XamlSystemBaseType
+    internal class XamlUserType : global::App1.MagicApp_XamlTypeInfo.XamlSystemBaseType
     {
-        global::App1.App1_XamlTypeInfo.XamlTypeInfoProvider _provider;
+        global::App1.MagicApp_XamlTypeInfo.XamlTypeInfoProvider _provider;
         global::Windows.UI.Xaml.Markup.IXamlType _baseType;
         bool _isArray;
         bool _isMarkupExtension;
@@ -280,7 +302,7 @@ namespace App1.App1_XamlTypeInfo
         global::System.Collections.Generic.Dictionary<string, string> _memberNames;
         global::System.Collections.Generic.Dictionary<string, object> _enumValues;
 
-        public XamlUserType(global::App1.App1_XamlTypeInfo.XamlTypeInfoProvider provider, string fullName, global::System.Type fullType, global::Windows.UI.Xaml.Markup.IXamlType baseType)
+        public XamlUserType(global::App1.MagicApp_XamlTypeInfo.XamlTypeInfoProvider provider, string fullName, global::System.Type fullType, global::Windows.UI.Xaml.Markup.IXamlType baseType)
             :base(fullName, fullType)
         {
             _provider = provider;
@@ -472,7 +494,7 @@ namespace App1.App1_XamlTypeInfo
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     internal class XamlMember : global::Windows.UI.Xaml.Markup.IXamlMember
     {
-        global::App1.App1_XamlTypeInfo.XamlTypeInfoProvider _provider;
+        global::App1.MagicApp_XamlTypeInfo.XamlTypeInfoProvider _provider;
         string _name;
         bool _isAttachable;
         bool _isDependencyProperty;
@@ -481,7 +503,7 @@ namespace App1.App1_XamlTypeInfo
         string _typeName;
         string _targetTypeName;
 
-        public XamlMember(global::App1.App1_XamlTypeInfo.XamlTypeInfoProvider provider, string name, string typeName)
+        public XamlMember(global::App1.MagicApp_XamlTypeInfo.XamlTypeInfoProvider provider, string name, string typeName)
         {
             _name = name;
             _typeName = typeName;

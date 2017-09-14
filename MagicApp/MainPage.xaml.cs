@@ -19,6 +19,7 @@ using Windows.UI.Xaml.Navigation;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Media.Imaging;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -30,63 +31,21 @@ namespace App1
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        JObject token;
+        JObject cardData;
+        JObject setData;
 
         public object Server { get; private set; }
 
         public MainPage()
         {
-            this.InitializeComponent();
-             token = LoadJson();
-           
-        /*    string path = "AllCards-x.json";
-        byte[] byteArray = Encoding.UTF8.GetBytes(path);
-        //byte[] byteArray = Encoding.ASCII.GetBytes(contents);
-        MemoryStream stream = new MemoryStream(byteArray);
-        StreamReader sr = new StreamReader(stream);
-        string text = sr.ReadToEnd();
-        //txb_Name.Text = text;
-        JObject token = JObject.Parse(File.ReadAllText(text));
-        //List<CardInfo> items = JsonConvert.DeserializeObject<List<CardInfo>>(token);
-        // PopulateData(token);
-        */
-        //txb_cmc.Text = token.Count.ToString();//(string)token.SelectToken("name");
-                                              // txb_oracle_text.Text = token.SelectToken("Bayou").ToString();
-
-            // JsonSerializer serializer = new JsonSerializer();
-            string cardinfo = token.SelectToken("Bayou").ToString();
-            CardInfo singleCardData = JsonConvert.DeserializeObject<CardInfo>(cardinfo);
-           // txb_oracle_text.Text = singleCardData.name.ToString();
-
-            JObject singleCard = token.SelectToken("Bayou") as JObject;
-            CardInfo test = singleCard.ToObject<CardInfo>();
-       //     txb_oracle_text.Text = test.ToString(); 
-      //  txb_oracle_text.Text = temp.Select(c => (string)c).ToString();
-        //Test_ClickAsync();
-        }
-
-        private void txb_API_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-
-
-        private static void Test_ClickAsync()
-        {
-            /*  // string data = await callAPIAsync();
-              // JObject token = JObject.Parse(data);
-              JObject token;
-              token = JObject.Parse(File.ReadAllText(@"C:\Users\Joseph\Documents\Visual Studio 2017\Projects\MagicApplication\MagicApp\AllSets.json"));
-              txb_Name.Text = (string)token.SelectToken("name");
-              txb_cmc.Text = (string)token.SelectToken("cmc");
-              txb_type_line.Text = (string)token.SelectToken("type_line");
-              txb_oracle_text.Text = (string)token.SelectToken("oracle_text");
-              txb_mana_cost.Text = (string)token.SelectToken("mana_cost");*/
+           this.InitializeComponent();
+           cardData = LoadJson();
+           setData = LoadAllSetsJson();    
         }
 
         private async System.Threading.Tasks.Task<string> callAPIAsync()
         {
+            //API Call, is not being used to API downtime, ended up pulling the field directly for a JSON file.
             Windows.Web.Http.HttpClient httpClient = new Windows.Web.Http.HttpClient();
             //Pull data from Json File
             Uri requestUri = new Uri("https://api.scryfall.com/cards/vis/127");
@@ -98,13 +57,14 @@ namespace App1
             return httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
 
         }
+        private void txb_API_SelectionChanged()
+        {
+
+        }
         private void PopulateData(JObject data)
         {
             txb_Name.Text = (string)data.SelectToken("name");
             txb_cmc.Text = (string)data.SelectToken("cmc");
-          //  txb_type_line.Text = (string)data.SelectToken("type_line");
-          //  txb_oracle_text.Text = (string)data.SelectToken("oracle_text");
-           // txb_mana_cost.Text = (string)data.SelectToken("mana_cost");
         }
 
         private void Search_Click(object sender, RoutedEventArgs e)
@@ -114,19 +74,17 @@ namespace App1
             {
                 return;
             }
-            // JsonSerializer serializer = new JsonSerializer();
             JToken value;
-            if (token.TryGetValue(txb_card_search.Text,out value))
+
+            //Loads all card names of the same token... Has a lot of repeated information, might be more useful to use this function when they select the version
+            var setinfotest = setData.SelectTokens("$..cards[?(@.name == 'Bayou')]") ;
+            if (cardData.TryGetValue(txb_card_search.Text,out value))
             {
                 Test_Var.Text = "found";
-                var cardinfotest = token.SelectTokens("['"+txb_card_search.Text+"']");
-               
-                //  if (token.SelectToken(txb_card_search.Text) == null ) { txb_card_search.Text = "No Data Found";  }
-                string cardinfo = token.SelectToken("['" + txb_card_search.Text + "']").ToString();
-                CardInfo singleCardData = JsonConvert.DeserializeObject<CardInfo>(cardinfo);
-                // txb_oracle_text.Text = singleCardData.name.ToString();
-
-                JObject singleCard = token.SelectToken("['" + txb_card_search.Text + "']") as JObject;
+                var cardinfotest = cardData.SelectToken("['"+txb_card_search.Text+"']");
+                string cardinfo = cardData.SelectToken("['" + txb_card_search.Text + "']").ToString();
+                //CardInfo singleCardData = JsonConvert.DeserializeObject<CardInfo>(cardinfo);
+                JObject singleCard = cardData.SelectToken("['" + txb_card_search.Text + "']") as JObject;
                 CardInfo test = singleCard.ToObject<CardInfo>();
                 txb_Name.Text = test.name;
                 //Handle Land Cards, since there is no manaCost, colors, power, and toughness is null
@@ -164,6 +122,7 @@ namespace App1
                 {
                     txb_legality.Text = txb_legality.Text + singleLegality.format + ": " + singleLegality.legality + ", ";
                 }
+                pullFirstImage(test.name);
                 cleanUpStrings();
             }
             else
@@ -171,6 +130,15 @@ namespace App1
                 Test_Var.Text = "Not Found";
             }
            
+        }
+        private void pullFirstImage(string imagename)
+        {
+            JObject firstImage = setData.SelectTokens("$..cards[?(@.name == '"+imagename+"')]").First() as JObject;
+            Card singleCardData = firstImage.ToObject<Card>();
+         //   Card_Image.Source =  new Uri("http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + singleCardData.multiverseid + "&type=card");
+            BitmapImage Image = new BitmapImage(new Uri("http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + singleCardData.multiverseid + "&type=card", UriKind.Absolute));
+            Card_Image.Source = Image;
+            //  Card singleCardData = JsonConvert.DeserializeObject<Card>(firstImage);
         }
         private void clearTextboxes()
         {
@@ -203,11 +171,25 @@ namespace App1
             StreamReader sr = new StreamReader(stream);
             string text = sr.ReadToEnd();
             //txb_Name.Text = text;
-            JObject token = JObject.Parse(File.ReadAllText(text));
-
-            return token;
+            JObject cardData = JObject.Parse(File.ReadAllText(text));
+            return cardData;
+        }
+        public  JObject LoadAllSetsJson()
+        {
+            string path = "AllSets.json";
+            byte[] byteArray = Encoding.UTF8.GetBytes(path);
+            //byte[] byteArray = Encoding.ASCII.GetBytes(contents);
+            MemoryStream stream = new MemoryStream(byteArray);
+            StreamReader sr = new StreamReader(stream);
+            string text = sr.ReadToEnd();
+            //txb_Name.Text = text;
+            JObject cardData = JObject.Parse(File.ReadAllText(text));
+            return cardData;
         }
 
-      
+        private void txb_API_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
     }

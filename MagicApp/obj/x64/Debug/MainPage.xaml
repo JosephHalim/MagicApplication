@@ -5,7 +5,7 @@
     xmlns:local="using:App1"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" Height="1304.289">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,20,0,-20">
         <Grid.RowDefinitions>
@@ -37,7 +37,8 @@
         <TextBlock x:ConnectionId='24' x:Name="txb_legality_Copy" HorizontalAlignment="Left" Margin="31,493,0,0" TextWrapping="Wrap" Text="Legal in:" VerticalAlignment="Top"                                             RenderTransformOrigin="0.482,2.4" Width="100"/>
         <TextBlock x:ConnectionId='25' x:Name="Test_Var" HorizontalAlignment="Left" Margin="588,117,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="898,406,0,0" VerticalAlignment="Top" Width="100"/>
-        <Image x:ConnectionId='26' x:Name="Card_Image" HorizontalAlignment="Left" Height="372" Margin="31,583,0,-187" VerticalAlignment="Top" Width="304"/>
+        <Image x:ConnectionId='26' x:Name="Card_Image" HorizontalAlignment="Left" Height="372" Margin="477,199,-349,0" VerticalAlignment="Top" Width="304"/>
+        <ComboBox x:ConnectionId='27' x:Name="cb_Printings" HorizontalAlignment="Left" Margin="31,539,0,0" VerticalAlignment="Top" Width="120"/>
 
 
     </Grid>

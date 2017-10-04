@@ -1,0 +1,6 @@
+/In:"C:\Users\Joey\Documents\GitHub\MagicApplication\MagicApp\obj\x64\Debug\ilc\in"
+/Lib:"C:\Users\Joey\Documents\GitHub\MagicApplication\MagicApp\obj\x64\Debug\ilc\in"
+/Lib:"C:\Users\Joey\.nuget\packages\microsoft.net.native.compiler\1.7.0\tools\x64\ilc\lib\Private"
+/WinMD:"C:\Users\Joey\Documents\GitHub\MagicApplication\MagicApp\obj\x64\Debug\ilc\in\WinMetadata\Windows.winmd"
+/RdXmlPath:"C:\Users\Joey\.nuget\packages\microsoft.net.native.compiler\1.7.0\tools\LibraryXML"
+/RunOnlyPreDR

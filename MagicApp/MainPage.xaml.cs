@@ -1,31 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
+﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Threading.Tasks;
 using Windows.UI.Xaml.Media.Imaging;
+using Windows.System;
+using Newtonsoft.Json.Linq;
+using System;
+using System.IO;
+using System.Text;
+
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace App1
 {
-    
+
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
@@ -33,12 +20,21 @@ namespace App1
     {
         JObject cardData;
         JObject setData;
+        private global::System.Object server;
 
-        public object Server { get; private set; }
+        public global::System.Object GetServer()
+        {
+            return server;
+        }
+
+        private void SetServer(global::System.Object value)
+        {
+            server = value;
+        }
 
         public MainPage()
         {
-           this.InitializeComponent();
+            InitializeComponent();
            cardData = LoadJson();
            setData = LoadAllSetsJson();    
         }
@@ -122,7 +118,7 @@ namespace App1
                 {
                     txb_legality.Text = txb_legality.Text + singleLegality.format + ": " + singleLegality.legality + ", ";
                 }
-                pullFirstImage(test.name);
+                pullImageInformation(test.name);
                 cleanUpStrings();
             }
             else
@@ -131,15 +127,31 @@ namespace App1
             }
            
         }
-        private void pullFirstImage(string imagename)
+        private void pullImageInformation(string imagename)
         {
-            JObject firstImage = setData.SelectTokens("$..cards[?(@.name == '"+imagename+"')]").First() as JObject;
-            Card singleCardData = firstImage.ToObject<Card>();
+            var Images = setData.SelectTokens("$..cards[?(@.name == '"+imagename+"')]") as JObject;
+            pullFirstImage(Images.First);
+          //  generateImageSelection(Images);
+           // Card singleCardData = imagename.ToObject<Card>();
          //   Card_Image.Source =  new Uri("http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + singleCardData.multiverseid + "&type=card");
-            BitmapImage Image = new BitmapImage(new Uri("http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + singleCardData.multiverseid + "&type=card", UriKind.Absolute));
-            Card_Image.Source = Image;
+           // BitmapImage Image = new BitmapImage(new Uri("http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + singleCardData.multiverseid + "&type=card", UriKind.Absolute));
+           // Card_Image.Source = Image;
             //  Card singleCardData = JsonConvert.DeserializeObject<Card>(firstImage);
         }
+        private void pullFirstImage(JToken firstImage)
+        {
+            Card singleCardData = firstImage.ToObject<Card>();
+            //   Card_Image.Source =  new Uri("http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + singleCardData.multiverseid + "&type=card");
+            BitmapImage Image = new BitmapImage(new Uri("http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + singleCardData.multiverseid + "&type=card", UriKind.Absolute));
+            Card_Image.Source = Image;
+        }
+       /* private void generateImageSelections(JObject Images)
+        {
+            foreach(string printings in Images.printings)
+            {
+
+            }
+        }*/
         private void clearTextboxes()
         {
             txb_Name.Text = string.Empty;

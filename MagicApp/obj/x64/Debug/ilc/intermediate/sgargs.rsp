@@ -1,0 +1,11 @@
+/out:"C:\Users\Joey\Documents\GitHub\MagicApplication\MagicApp\obj\x64\Debug\ilc\intermediate\SgGenerated\\"
+/int:"C:\Users\Joey\Documents\GitHub\MagicApplication\MagicApp\obj\x64\Debug\ilc\intermediate\\"
+/ref:"C:\Users\Joey\Documents\GitHub\MagicApplication\MagicApp\obj\x64\Debug\ilc\intermediate\PreMergeILTransformed"
+/ref:"C:\Users\Joey\Documents\GitHub\MagicApplication\MagicApp\obj\x64\Debug\ilc\intermediate\TransformedSRWR"
+/ref:"C:\Users\Joey\Documents\GitHub\MagicApplication\MagicApp\obj\x64\Debug\ilc\in"
+/ref:"C:\Users\Joey\Documents\GitHub\MagicApplication\MagicApp\obj\x64\Debug\ilc\in\\"
+/ref:"C:\Users\Joey\Documents\GitHub\MagicApplication\MagicApp\obj\x64\Debug\ilc\in\\"
+/ref:"C:\Users\Joey\.nuget\packages\microsoft.net.native.compiler\1.7.0\tools\x64\ilc\lib\Private\\"
+/ref:"C:\Users\Joey\Documents\GitHub\MagicApplication\MagicApp\obj\x64\Debug\ilc\in\WinMetadata"
+/ca:System.Private.CoreLib
+/cscpath:"C:\Users\Joey\.nuget\packages\microsoft.net.native.compiler\1.7.0\tools\x64\ilc\csc"
